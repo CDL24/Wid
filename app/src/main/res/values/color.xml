@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#36465D</color>
+    <color name="colorPrimaryDark">#2c3e50</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#ecf0f1</color>
+
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+    <color name="whesphalt">#34495e</color>
+
+    <color name="default_widget_color">#ff58bb52</color>
+    <color name="facebook">#3b5999</color>
+    <color name="twitter">#55acee</color>
+    <color name="youtube">#e52d27</color>
+    <color name="yahoo">#2980b9</color>
+    <color name="whatsapp">#25D366</color>
+    <color name="vine">#00b489</color>
+    <color name="snapchat">#bc428b</color>
+    <color name="stumbledupon">#ff6600</color>
+    <color name="foursquare">#f94877</color>
+    <color name="off_white">#ecf0f1</color>
+    <color name="whisteria">#8e44ad</color>
+    <color name="orange">#f39c12</color>
+    <color name="aw_dark">#e36a97</color>
+    <color name="tumblr_primary">#36465D</color>
+    <color name="tumblr_orange">#F2992E</color>
+    <color name="tumblr_green">#56BC8A</color>
+    <color name="tumblr_white">#FFFFFF</color>
+    <color name="tumblr_grey">#748089</color>
+    <color name="tumblr_blue">#4AA8D8</color>
+    <color name="tumblr_red">#D95E40</color>
+</resources>

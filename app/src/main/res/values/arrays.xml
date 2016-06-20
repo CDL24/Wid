@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="ball1">#FFD91C</color>
+  <color name="ball2">#FF4B4A</color>
+  <color name="ball3">#3D8EFF</color>
+
+  <integer-array name="colors">
+    <item>@color/ball1</item>
+    <item>@color/ball2</item>
+    <item>@color/ball3</item>
+  </integer-array>
+
+  <string-array name="widget_color">
+    <item> name="facebook">#3b5999</item>
+    <item> @color/twitter</item>
+    <item> @color/youtube</item>
+    <item> @color/yahoo</item>
+    <item> @color/whatsapp</item>
+    <item> @color/vine</item>
+    <item> @color/snapchat</item>
+    <item> @color/stumbledupon</item>
+    <item>@color/foursquare</item>
+  </string-array>
+</resources>

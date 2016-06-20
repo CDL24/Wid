@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:lib="http://schemas.android.com/apk/res-auto"
+    android:background="#10000000">
+
+    <loadingball.factory.BallView
+        android:id="@+id/ball_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        lib:balls="5"
+        lib:movement_cycle_time="2500"
+        lib:ball_colors="@array/colors"
+        lib:path="diamond"
+        lib:ball_size="6dp"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/lblLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="#fff"
+        android:textSize="@dimen/abc_action_bar_content_inset_material"
+        android:background="@android:color/transparent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        />
+</RelativeLayout>

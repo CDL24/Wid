@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin">
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/default_horizontal_gradient"
+        android:padding="@dimen/widget_margin">
+
+    <ImageView
+        android:id="@+id/action_location"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_location_on_vector" />
+
+    <TextView
+        android:id="@+id/text_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/separator"
+        android:layout_toRightOf="@+id/action_location"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center_vertical"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="@string/MSG_TAP_ON_PIN"
+        android:textColor="@color/text_shadow_white"
+        android:textSize="@dimen/abc_text_size_button_material" />
+
+    <ImageView
+        android:id="@+id/action_share"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="5dp"
+        android:src="@drawable/more" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/action_share"
+        android:layout_toStartOf="@+id/action_share"
+        android:background="#fff"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible" />
+
+    <!--<View
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/action_share"
+        android:layout_toStartOf="@+id/action_share" />-->
+
+    <!--<Button
+        android:id="@+id/actionButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Refresh"/>-->
+    </RelativeLayout>
+</RelativeLayout>
