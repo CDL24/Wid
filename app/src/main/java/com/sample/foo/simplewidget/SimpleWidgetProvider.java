@@ -2,6 +2,7 @@ package com.sample.foo.simplewidget;
 
 import android.Manifest;
 import android.animation.ObjectAnimator;
+import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -19,6 +20,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.text.Html;
 import android.view.View;
@@ -37,6 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import classes.MyTimer;
+import classes.RepeatingAlarm;
 import classes.UpdateIntentService;
 
 
@@ -61,16 +65,19 @@ public class SimpleWidgetProvider extends AppWidgetProvider {
     public void onEnabled(Context context) {
         super.onEnabled(context);
         RemoteViews updateViews = new RemoteViews(context.getPackageName(), R.layout.simple_widget);
-
+        Toast.makeText(context, "onEnable", Toast.LENGTH_SHORT).show();
         if(null != updateViews){
             updateViews = prepareWidgetLayout(updateViews, context);
 
             ComponentName thisWidget = new ComponentName(context, SimpleWidgetProvider.class);
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
+
+            MyTimer myTimer = new MyTimer(context);
+            myTimer.runAndUpdateTheWidget();
+
             manager.updateAppWidget(thisWidget, updateViews);
         }
     }
-
     public RemoteViews prepareWidgetLayout(RemoteViews updateViews, Context context) {
 
         SharedPreferences pref = context.getSharedPreferences("MyPref", context.MODE_PRIVATE);
@@ -120,13 +127,28 @@ public class SimpleWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int count = appWidgetIds.length;
 
-        //Toast.makeText(context, "onUpdate", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "onUpdate", Toast.LENGTH_SHORT).show();
 
         RemoteViews remoteViews;
         ComponentName watchWidget;
 
         remoteViews = new RemoteViews(context.getPackageName(), R.layout.simple_widget);
         watchWidget = new ComponentName(context, SimpleWidgetProvider.class);
+
+
+        Intent intent = new Intent(context, RepeatingAlarm.class);
+        PendingIntent sender = PendingIntent
+                .getBroadcast(context, 0, intent, 0);
+
+        // We want the alarm to go off 1 seconds from now.
+        long firstTime = SystemClock.elapsedRealtime();
+        //firstTime += 1000;
+
+        // Schedule the alarm!
+        AlarmManager am = (AlarmManager) context
+                .getSystemService(Context.ALARM_SERVICE);
+        am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, 60000,
+                sender);
 
         remoteViews = prepareWidgetLayout(remoteViews, context);
 
