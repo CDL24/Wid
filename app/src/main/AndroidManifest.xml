@@ -44,9 +44,17 @@
 
         <receiver android:name=".MyBroadcastReceiver"/>
 
-        <receiver android:name="classes.RepeatingAlarm"
+        <!--<receiver android:name="classes.RepeatingAlarm"
             android:process=":remote">
-        </receiver>
+            <intent-filter><action android:name="android.intent.action.SCREEN_ON"/> </intent-filter>
+        </receiver>-->
+
+        <service android:name="classes.UpdateClock">
+        <!--<service android:name=".SimpleWidgetProvider$UpdateClock">-->
+            <intent-filter>
+                <action android:name="com.sample.foo.simplewidget.action.UPDATE" />
+            </intent-filter>
+        </service>
 
         <supports-screens android:smallScreens="true"
             android:normalScreens="true"

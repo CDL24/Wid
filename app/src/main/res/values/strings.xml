@@ -10,4 +10,5 @@
     <string name="info_email">Email : limbachiya24@gmail.com</string>
     <string name="info_developer">Developer : Chirag Limbachiya</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="date_format">EEEE, MMMM dd</string>
 </resources>

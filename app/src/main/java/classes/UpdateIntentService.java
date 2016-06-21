@@ -64,20 +64,6 @@ public class UpdateIntentService extends IntentService implements com.google.and
     protected void onHandleIntent(Intent intent) {
 
         Toast.makeText(this, "onHandleIntent", Toast.LENGTH_SHORT).show();
-
-       /* createLocationRequest();
-
-        fusedLocationProviderApi = LocationServices.FusedLocationApi;
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(LocationServices.API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();
-        if (mGoogleApiClient != null) {
-            //Toast.makeText(getApplicationContext(), "Get Client", Toast.LENGTH_SHORT).show();
-            mGoogleApiClient.connect();
-        }*/
-
     }
 
     @Override
@@ -196,7 +182,12 @@ public class UpdateIntentService extends IntentService implements com.google.and
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        fusedLocationProviderApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+
+        if(mGoogleApiClient.isConnected()){
+            fusedLocationProviderApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        }else{
+            mGoogleApiClient.connect();
+        }
     }
 
     @Override
